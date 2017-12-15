@@ -27,7 +27,7 @@
             <header>
                 <!-- the firmVote Logo -->
 			 <?php
-             	    $append = "../assets/";
+             	    $append = "../";
 					head_banner($append, $connection);
 			 ?>
                 <!-- the firmVote Logo -->

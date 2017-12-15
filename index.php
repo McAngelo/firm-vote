@@ -8,7 +8,7 @@
 		<meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>firmVote 0.2</title>
+        <title>firmVote</title>
         <meta name="description" content="firmVote 0.2 - This is a voting system" />
         <meta name="keywords" content="firmVote, creative, effective votes, votes, voting system, easy vote" />
         <meta name="author" content="Michael Johnson" />
@@ -27,7 +27,7 @@
 
             <!-- the firmVote Logo -->
 			 <?php
-			 	$append = "assets/";
+			 	$append = "";
 			 	head_banner($append, $connection);
 			?>
                 <!-- the firmVote Logo -->
@@ -45,9 +45,9 @@
 					<span>f</span>
 					<span>ir</span>
 					<span>m</span>
+					<span></span>
 					<span>v</span>
-					<span>o</span>
-					<span>t</span>
+					<span>ot</span>
 					<span>e</span>
 					<span></span>
 				</h2>

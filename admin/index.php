@@ -7,36 +7,36 @@
 <html lang="en">
     <head>
 		<meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
-		<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>firmVote 0.2</title>
         <meta name="description" content="firmVote 0.2 - This is a voting system" />
         <meta name="keywords" content="firmVote, creative, effective votes, votes, voting system, easy vote" />
         <meta name="author" content="Michael Johnson" />
-        <link rel="shortcut icon" href="../images/logo.ico"> 
+        <link rel="shortcut icon" href="../images/logo.ico">
         <link rel="stylesheet" type="text/css" href="css/style.css" />
 		<script src="js/modernizr.custom.63321.js"></script>
 		<!--[if lte IE 7]><style>.main{display:none;} .support-note .note-ie{display:block;}</style><![endif]-->
     </head>
     <body>
         <div class="container">
-		
-			
+
+
 			<header>
-			
+
 				 <!-- the firmVote Logo -->
-			 <?php 
-			 	$append = "../assets/";
-			 	head_banner($append); 
+			 <?php
+			 	$append = "../";
+			 	head_banner($append, $connection);
 			?>
                 <!-- the firmVote Logo -->
 
 				<div class="support-note">
 					<span class="note-ie">Sorry, only modern browsers.</span>
 				</div>
-				
+
 			</header>
-			
+
 			<section class="main">
 				<form name="frmAdminLog" id="frmAdminLog" method="post" action="../include/validate.php" class="form-1">
 					<p class="field">
