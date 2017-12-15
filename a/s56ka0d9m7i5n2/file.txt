@@ -1,0 +1,37 @@
+
+            <!-- Header. Main part -->
+            <div id="header-main">
+                <div class="container_12">
+                    <div class="grid_12">
+                        <div id="logo">
+                            <ul id="nav">
+                                <li id="current"><a href="">Dashboard</a></li>
+                                <li><a href="">Articles</a></li>
+                                <li><a href="">Files</a></li>
+                                <li><a href="">Profile</a></li>
+                                <li><a href="">Settings</a></li>
+                            </ul>
+                        </div><!-- End. #Logo -->
+                    </div><!-- End. .grid_12-->
+                    <div style="clear: both;"></div>
+                </div><!-- End. .container_12 -->
+            </div> <!-- End #header-main -->
+            <div style="clear: both;"></div>
+            <!-- Sub navigation -->
+            <div id="subnav">
+                <div class="container_12">
+                    <div class="grid_12">
+                        <ul>
+                            <li><a href="#">link 1</a></li>
+                            <li><a href="#">link 2</a></li>
+                            <li><a href="#">link 3</a></li>
+                            <li><a href="#">link 4</a></li>
+                            <li><a href="#">link 5</a></li>
+                        </ul>
+                        
+                    </div><!-- End. .grid_12-->
+                </div><!-- End. .container_12 -->
+                <div style="clear: both;"></div>
+            </div> <!-- End #subnav -->
+        </div> <!-- End #header -->
+        

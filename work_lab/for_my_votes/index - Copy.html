@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+		<title>firmVote 0.2</title>
+        <meta name="description" content="firmVote 0.2 - This is a voting system" />
+        <meta name="keywords" content="firmVote, creative, effective votes, votes, voting system, easy vote" />
+        <meta name="author" content="Michael Johnson" />
+		<link rel="shortcut icon" href="../../images/logo.ico"> 
+		<link rel="stylesheet" type="text/css" href="css/style.css" />
+		<script src="js/modernizr.custom.63321.js"></script>
+        <script type="text/javascript">
+			<!-- 
+				function president(num)
+				// Function that will select the president 
+				{
+					//document.getElementsByName("Image").Image[num].checked = true;
+					document.frmVote.Image[num].checked = true;
+				}
+				function vpresident(num1)
+				// Function that will select the vice president 
+				{
+					document.frmVote.Image1[num1].checked = true;
+				}
+				function executive_sec(num2)
+				// Function that will select the executive sec 
+				{
+					document.frmVote.Image2[num2].checked = true;
+				}
+				function finance_officer(num3)
+				// Function that will select the financial Officer
+				{
+					document.frmVote.Image3[num3].checked = true;
+				}
+				function organizing_Secretary(num4)
+				// Function that will select the Organizing Secretary
+				{
+					document.frmVote.Image4[num4].checked = true;
+				}
+				function a_organizing_Secretary(num5)
+				// Function that will select the Assistant Organizing Secretary
+				{
+					document.frmVote.Image5[num5].checked = true;
+				}
+				function chaplain(num6)
+				// Function that will select the Chaplain
+				{
+					document.frmVote.Image6[num6].checked = true;
+				}
+				function editor(num7)
+				// Function that will select the Editor
+				{
+					document.frmVote.Image7[num7].checked = true;
+				}
+			-->
+		</script>
+	</head>
+	<body>
+		<div class="container">	
+			<!--  -->
+            <form name="frmVote" id="frmVote">
+			<header class="clearfix">
+				 <!-- the firmVote Logo -->
+                 
+                <table width="1200">
+                	<tr>
+                    	<td width="50%" align="left"><img src="../../images/ban.png" /></td><td width="50%" align="right"><a href="#"><img onClick="vote();" src="images/vote.png" /></a></td>
+                    </tr>
+                </table>
+                <!-- the firmVote Logo --> 
+			</header>
+            
+			<div class="main">
+				<div id="mi-slider" class="mi-slider">
+                
+               		 <!-- The Candidates for President -->
+					<ul>
+                    
+						<li>
+                        	<input type="radio" name="Image" value="President" id="Image1" checked="checked" />
+                        	<a href="#" onclick="president(0);"><img src="images/p.jpg" alt="img02" />
+                        	<h4>President</h4></a>
+                        </li>
+                        <li> 
+                        	<input type="radio" name="Image" value="Mr. Henry Ford" id="Image2" />
+                        	<a href="#" onclick="president(1);"><img src="images/13.jpg" alt="img02">
+                            <h4>Mr. Henry Ford</h4></a>
+                        </li>
+						<li>
+                        	<input type="radio" name="Image" value="Mr. Bismark Wright" id="Image3" />
+                            <a href="#" onclick="president(2);"><img src="images/3.jpg" alt="img03">
+                            <h4>Mr. Bismark Wright</h4></a>
+                        </li>
+					</ul>
+                    
+					<!-- The Candidates for Vice President -->   
+                    <ul>
+						<li> 
+                        	<input type="radio" name="Image1" value="Vice President" id="Image2" checked="checked" />
+                        	<a href="#" onclick="vpresident(1);"><img src="images/p.jpg" alt="img02">
+                        	<h4>Vice President</h4></a>
+                        </li>
+                        <li> 
+                        	<input type="radio" name="Image1" value="Mr. Martey Greg" id="Image3" />
+                        	<a href="#" onclick="vpresident(2);"><img src="images/2.jpg" alt="img02">
+                        	<h4>Mr. Martey Greg</h4></a>
+                        </li>
+						<li>
+                        	<input type="radio" name="Image1" value="Mr. Wilson Freeman" id="Image4" />
+                        	<a href="#" onclick="vpresident(3);"><img src="images/15.jpg" alt="img03">
+                        	<h4>Mr. Wilson Freeman</h4></a>
+                        </li>
+					</ul>
+                    
+                    <!-- The Candidates for Executive Secretary -->   
+                    <ul>
+						<li>
+                        	<input type="radio" name="Image2" value="Executive Secretary" id="Image3" checked="checked" />
+                            <a href="#" onclick="executive_sec(2);"><img src="images/p.jpg" alt="img02">
+                            <h4>Executive Secretary</h4></a>
+                        </li>
+                        <li>
+                        	<input type="radio" name="Image2" value="Miss Amanda Right" id="Image4" />
+                        	<a href="#" onclick="executive_sec(3);"> <img src="images/4.jpg" alt="img02">
+                            <h4>Miss Amanda Right</h4></a>
+                        </li>
+						<li>
+                        	<input type="radio" name="Image2" value="Miss Frida Quaye" id="Image5" />
+                            <a href="#" onclick="executive_sec(4);"><img src="images/14.jpg" alt="img03">
+                            <h4>Miss Frida Quaye</h4></a>
+                       </li>
+                        <li>
+                        	<input type="radio" name="Image2" value="Miss Abigal Wright" id="Image6" />
+                        	<a href="#" onclick="executive_sec(5);"><img src="images/1.jpg" alt="img03">
+                            <h4>Miss Abigal Wright</h4></a>
+                        </li>
+					</ul>
+                    
+                     <!-- The Candidates for Financial Officer -->
+                    <ul>
+						<li>
+                        	<input type="radio" name="Image3" value="Financial Officer" id="Image4" checked="checked" />
+                            <a href="#" onclick="finance_officer(3);"> <img src="images/p.jpg" alt="img02">
+                            <h4>Financial Officer</h4></a>
+                        </li>
+                        <li>
+                        	<input type="radio" name="Image3" value="Mr. Kofi Mantey" id="Image5" />
+                            <a href="#" onclick="finance_officer(4);"> <img src="images/15.jpg" alt="img02">
+                            <h4>Mr. Kofi Mantey</h4></a>
+                        </li>
+						<li>
+                        	<input type="radio" name="Image3" value="Mr. Hanlali Mohamed" id="Image6" />
+                            <a href="#" onclick="finance_officer(5);"><img src="images/17.jpg" alt="img03">
+                            <h4>Mr. Hanlali Mohamed</h4></a>
+                       </li>
+					</ul>
+                    
+                    <!-- The Candidates for Organizing Secretary -->
+                     <ul>
+						<li>
+                        	<input type="radio" name="Image4" value="Organizing Secretary" id="Image4" checked="checked" />
+                            <a href="#" onclick="organizing_Secretary(3);"> <img src="images/p.jpg" alt="img02">
+                            <h4>Organizing Secretary</h4></a>
+                       </li>
+                        <li>
+                        	<input type="radio" name="Image4" value="Mr. Ofori Francis" id="Image5" />
+                            <a href="#" onclick="organizing_Secretary(4);"> <img src="images/9.jpg" alt="img02">
+                            <h4>Mr. Ofori Francis</h4></a>
+                        </li>
+						<li>
+                        	<input type="radio" name="Image4" value="Mr. Nkrah Asesi" id="Image6" />
+                            <a href="#" onclick="organizing_Secretary(5);"><img src="images/5.jpg" alt="img03">
+                            <h4>Mr. Nkrah Asesi</h4></a>
+                       	</li>
+					</ul>
+                    
+                    <!-- The Candidates for Assistant Organizing Secretary -->
+                     <ul>
+						<li>
+                        	<input type="radio" name="Image5" value="Assistant Organizing Secretary" id="Image5" checked="checked" />
+                        	<a href="#" onClick="a_organizing_Secretary(3);"> <img src="images/p.jpg" alt="img02">
+                        	<h4>Assistant Organizing Secretary</h4></a>
+                        </li>
+                        <li>
+                        	<input type="radio" name="Image5" value="Miss Ophilia Lartey" id="Image6" />
+                            <a href="#" onClick="a_organizing_Secretary(4);"><img src="images/16.jpg" alt="img02">
+                            <h4>Miss Ophilia Lartey</h4></a>
+                        </li>
+						<li>
+                        	<input type="radio" name="Image5" value="Miss Ivy Deka" id="Image7" />
+                            <a href="#" onClick="a_organizing_Secretary(5);"><img src="images/18.jpg" alt="img03">
+                            <h4>Miss Ivy Deka</h4></a>
+                        </li>
+					</ul>
+                    
+                    <!-- The Candidates for Chaplain -->
+                     <ul>
+						<li>
+                        	<input type="radio" name="Image6" value="Chaplain" id="Image6" checked="checked" />
+                            <a href="#"> <img src="images/p.jpg" alt="img02" onClick="document.getElementById('Image6').checked =
+true;">
+                            <h4>Chaplain</h4></a>
+                        </li>
+                        <li>
+                        	<input type="radio" name="Image6" value="Mr. Wrighter Goodman" id="Image7" />
+                            <a href="#"> <img src="images/8.jpg" alt="img02" onClick="document.getElementById('Image7').checked =
+true;">
+                            <h4>Mr. Wrighter Goodman</h4></a></li>
+					</ul>
+                    
+                    <!-- The Candidates for Editor -->
+                    <ul>
+						<li>
+                        	<input type="radio" name="Image7" value="Editor" id="Image8" checked="checked" />
+                            <a href="#"> <img src="images/p.jpg" alt="img02" onClick="document.getElementById('Image8').checked =
+true;">
+                            <h4>Editor</h4></a>
+                        </li>
+                        <li>
+                        	<input type="radio" name="Image7" value="Miss Dorcas Krane" id="Image9" />
+                            <a href="#"> <img src="images/6.jpg" alt="img02" onClick="document.getElementById('Image9').checked =
+true;">
+                            <h4>Miss Dorcas Krane</h4></a>
+                        </li>
+						<li>
+                        	<input type="radio" name="Image7" value="Mr. Daniel Agbemenyali" id="Image10" />
+                            <a href="#" onClick="document.getElementById('Image10').checked =
+true;" ><img src="images/7.jpg" alt="img03">
+                            <h4>Mr. Daniel Agbemenyali</h4></a></li>
+					</ul>
+                    
+					<nav>
+						<a href="#"><img src="images/vote-icon.gif" /></a>
+                        <a href="#"><img src="images/vote-icon.gif" /></a> 
+                        <a href="#"><img src="images/vote-icon.gif" /></a>
+                        <a href="#"><img src="images/vote-icon.gif" /></a> 
+                        <a href="#"><img src="images/vote-icon.gif" /></a>   
+                        <a href="#"><img src="images/vote-icon.gif" /></a>
+                        <a href="#"><img src="images/vote-icon.gif" /></a> 
+                        <a href="#"><img src="images/vote-icon.gif" /></a>                   
+					</nav>
+				</div>
+			</div>
+		</div><!-- /container -->
+        </form>
+		<script src="js/jquery.min.js"></script>
+		<script src="js/jquery.catslider.js"></script>
+		<script>
+			$(function() {
+
+				$( '#mi-slider' ).catslider();
+
+			});
+		</script>
+	</body>
+</html>
