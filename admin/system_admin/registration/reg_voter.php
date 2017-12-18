@@ -21,7 +21,7 @@
 									}
 
 								else{
-										raw_form();
+										raw_form($connection);
 									}
 
 					 ?>

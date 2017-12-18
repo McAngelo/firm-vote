@@ -23,7 +23,7 @@
 	// this functions accepts user login
 	function candidate_login()
 	{
-		echo '<form name="frmVoterLogin" id="frmVoterLogin" method="post"  action="login.php" autocomplete="on">
+		echo '<form name="frmVoterLogin" id="frmVoterLogin" method="post"  action="index.php" autocomplete="on">
 					<input type="hidden" name="voted" value="yes">
                     <h1>Log in</h1>
                     <p>
@@ -53,10 +53,10 @@
 	}
 
 	//This function display login success
-	function login_success($student_id)
+	function login_success($student_id, $connection)
 	{
 		$voter = "SELECT student_id,	title,	surname,	firstName,	middleName FROM electrates_tbl WHERE student_id = '" . $student_id . "'";
-				$result = mysqli_query($voter)  or die('Could not look up Electrates data; ' . mysqli_error());
+				$result = mysqli_query($connection, $voter)  or die('Could not look up Electrates data; ' . mysqli_error());
 				 while ($row = mysqli_fetch_assoc($result))
 				{
 					$name = $row['title'] . " " . $row['surname'] . " " . $row['firstName'] . " " . $row['middleName'];
@@ -74,10 +74,10 @@
 	}
 
 	//This function display an error that indicates double voting
-	function fraud_alert($student_id)
+	function fraud_alert($student_id, $connection)
 	{
 		$voter = "SELECT student_id,	title,	surname,	firstName,	middleName FROM electrates_tbl WHERE student_id = '" . $student_id . "'";
-				$result = mysqli_query($voter)  or die('Could not look up Electrates data; ' . mysqli_error());
+				$result = mysqli_query($connection, $voter)  or die('Could not look up Electrates data; ' . mysqli_error());
 					 while ($row = mysqli_fetch_assoc($result))
 					{
 						$name = $row['title'] . " " . $row['surname'] . " " . $row['firstName'] . " " . $row['middleName'];
@@ -131,7 +131,7 @@
 	}
 
 	//This function submits the elected candidates to be voted for
-	function final_votes()
+	function final_votes($connection)
 	{
 		echo '<h1>You elected the following...</h1>';
 
@@ -143,7 +143,7 @@
 				<td align="center" width="40%">Name</td>
 			  </tr>';
 
-		$resulta = mysqli_query("SELECT * FROM position_tbl ORDER BY page_number ASC");
+		$resulta = mysqli_query($connection, "SELECT * FROM position_tbl ORDER BY page_number ASC");
        	$row_nr = mysqli_num_rows($resulta);
 
 		if ($row_nr >= 1)
@@ -155,7 +155,7 @@
 				$name = $myrow['name'];
 				$display_post = $_POST["$id"];
 
-				$can_result = mysqli_query("SELECT * FROM candidates_tbl, electrates_tbl
+				$can_result = mysqli_query($connection, "SELECT * FROM candidates_tbl, electrates_tbl
 										   WHERE electrates_tbl.ele_ID =" . $display_post . "
 										   AND candidates_tbl.student_id = electrates_tbl.ele_ID
 										   ORDER BY place ASC");
@@ -173,7 +173,7 @@
 					{
 
 						@$elected_can = $final_vote['title'] . " " . $final_vote['surname'] . " " . $final_vote['firstName'] . " " . $final_vote['middleName'];
-						echo '<td align="center" width="20%"><img src="../a/s56ka0d9m7i5n2/re6gi7str87at2ion/' . $final_vote['image_link'] .'" width="50" height="50"/><br /></td>';
+						echo '<td align="center" width="20%"><img src="../admin/system_admin/registration/' . $final_vote['image_link'] .'" width="50" height="50"/><br /></td>';
 						echo '<td width="40%">' . $elected_can .'<br /><input type="hidden" name="'. $id .'" id="'. $id .'" value="'. $display_post .'"</td>';
 					}
 				}
@@ -196,9 +196,9 @@
 	}
 
 	// This function prints all the position from the system
-	function positions()
+	function positions($connection)
 	{
-		$result = mysqli_query("SELECT * FROM position_tbl ORDER BY page_number ASC");
+		$result = mysqli_query($connection, "SELECT * FROM position_tbl ORDER BY page_number ASC");
        	$row_nr = mysqli_num_rows($result);
 
 		if ($row_nr >= 1)
@@ -211,7 +211,7 @@
 				$id	  = $myrow['post_name'];
 
               	echo '<ul>';
-                    	candidates($post, $name, $id);
+                    	candidates($connection, $post, $name, $id);
 				echo '</ul>';
 
 			}
@@ -232,9 +232,9 @@
 	}
 
 	// This function prints all the candidates for each position from the system
-	function candidates($post, $name, $id)
+	function candidates($connection, $post, $name, $id)
 	{
-		$can_result = mysqli_query("SELECT * FROM candidates_tbl, electrates_tbl
+		$can_result = mysqli_query($connection, "SELECT * FROM candidates_tbl, electrates_tbl
 							   	   WHERE candidates_tbl.position_id ={$post}
 								   AND candidates_tbl.student_id = electrates_tbl.ele_ID
 								   ORDER BY place ASC");
@@ -260,7 +260,7 @@
               	echo '<li>
                         	<input type="radio" name="'. $id .'" id="'. $can .'" value="'. $key_id .'"/>';
                 echo        "<a href=\"#\" onClick=\"document.getElementById('{$can}').checked= true;\">";
-                echo '      <img src="../../a/s56ka0d9m7i5n2/re6gi7str87at2ion/'. $mycan['image_link'] .'"/>
+                echo '      <img src="../../admin/system_admin/registration/'. $mycan['image_link'] .'"/>
                             <h4>' . $can_name .'</h4></a>
                      </li>';
 
@@ -278,10 +278,10 @@
 	}
 
 	// This function prints the navigation links to the user
-	function navigation()
+	function navigation($connection)
 	{
     	echo '<nav>';
-		$result_nav = mysqli_query("SELECT name FROM position_tbl ORDER BY page_number ASC");
+		$result_nav = mysqli_query($connection, "SELECT name FROM position_tbl ORDER BY page_number ASC");
 		$row_nav = mysqli_num_rows($result_nav);
 
 			if ($row_nav >= 1)

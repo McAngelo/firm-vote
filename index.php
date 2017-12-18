@@ -40,7 +40,7 @@
 			</header>
 
 			<section class="main">
-				<a href="login/login.php">
+				<a href="login/">
 				<h2 class="cs-text">
 					<span>f</span>
 					<span>ir</span>

@@ -38,9 +38,11 @@
                         <div id="login" class="animate form">
                             <?php
 
-							@$voted = mysqli_real_escape_string($_POST['voted']);
-							@$student_id = mysqli_real_escape_string($_POST['studentID']);
+							@$voted = $_POST['voted'];
+							@$student_id = $_POST['studentID'];
 
+/*							@$voted = mysqli_real_escape_string($_POST['voted']);
+							@$student_id = mysqli_real_escape_string($_POST['studentID']);*/
 
 							//check if the user has logged in
 							if($voted != "yes")
@@ -70,13 +72,13 @@
 								//check if the user has already voted
 								elseif(@$verify != 1)
 								{
-									login_success($student_id);
+									login_success($student_id, $connection);
 								}
 
 								//display a fraud alert
 								else
 								{
-									fraud_alert($student_id);
+									fraud_alert($student_id, $connection);
 								}
 							}
 							//display an error message
