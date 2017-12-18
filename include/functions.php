@@ -10,7 +10,7 @@
 				{
 				if($append != "")
 				{
-					echo ' <img src="'. $append . $row['logo'] .'" /><br><br>';
+					echo '<a href="../"> <img src="'. $append . $row['logo'] .'" /></a><br><br>';
 				}
 				else
 				{
@@ -85,7 +85,6 @@
 								 <font color="#FF0000" size="+1">'. $name .' has already voted</font>';
 								 echo "<meta http-equiv=Refresh content=6;url=login.php>";
 					}
-
 	}
 
 	//This is function actually performs the voting process
