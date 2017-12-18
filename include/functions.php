@@ -41,7 +41,7 @@
 	{
 		echo '<h1>Error</h1>
 			  <font color="#FF0000" size="+1">Please Verify that you entered a correct STUDENT ID</font><br />';
-			 echo "<meta http-equiv=Refresh content=5;url=login.php>";
+			 echo "<meta http-equiv=Refresh content=5;url=index.php>";
 	}
 
 	//This function display an error that indicates incorrect input
@@ -49,7 +49,7 @@
 	{
 		echo '<h1>Error</h1>
 			  <font color="#FF0000" size="+1">You have entered an incorrect STUDENT ID format</font><br />';
-			  echo "<meta http-equiv=Refresh content=5;url=login.php>";
+			  echo "<meta http-equiv=Refresh content=5;url=index.php>";
 	}
 
 	//This function display login success
@@ -83,18 +83,18 @@
 						$name = $row['title'] . " " . $row['surname'] . " " . $row['firstName'] . " " . $row['middleName'];
 							echo '<h1>Fraud Alert</h1>
 								 <font color="#FF0000" size="+1">'. $name .' has already voted</font>';
-								 echo "<meta http-equiv=Refresh content=6;url=login.php>";
+								 echo "<meta http-equiv=Refresh content=6;url=index.php>";
 					}
 	}
 
 	//This is function actually performs the voting process
-	function vote_success($id)
+	function vote_success($connection, $id)
 	{
 		//send the user back to thepage they were just viewing
 		echo '<h1>Congratulations !!!</h1>
-			  <font color="#0000FF" size="+1">Thank You for Successfully Voting with firmVote 0.2</font><br />';
+			  <font color="#0000FF" size="+1">Thank You for Successfully Voting with firmVote 2.0</font><br />';
 
-	  		$resulta = mysqli_query("SELECT * FROM position_tbl ORDER BY page_number ASC");
+	  		$resulta = mysqli_query($connection, "SELECT * FROM position_tbl ORDER BY page_number ASC");
 	         	$row_nr = mysqli_num_rows($resulta);
 
 	  		if ($row_nr >= 1)
@@ -110,7 +110,7 @@
 									SET polls = polls+1
 									WHERE student_id ={$elected_can}";
 
-					mysqli_query($post_polls) or die('Sorry could not update voter count; ' . mysqli_error());
+					mysqli_query($connection, $post_polls) or die('Sorry could not update voter count; ' . mysqli_error());
 
 					//echo $name . " -------> " . $elected_can . "<br>";
 	  			}
@@ -123,7 +123,7 @@
 					$count_voter = "INSERT INTO votes_tbl(student_id, status, time) " .
 								"VALUES ('" . $stud_id . "','" . $status ."','" . $date . "') ";
 
-						mysqli_query($count_voter) or die('Sorry could not update voter count; ' . mysqli_error());
+						mysqli_query($connection, $count_voter) or die('Sorry could not update voter count; ' . mysqli_error());
 			}
 
 		 echo "<meta http-equiv=Refresh content=5;url=../index.php>";
