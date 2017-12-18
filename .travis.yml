@@ -1,0 +1,28 @@
+sudo: false
+
+language: php
+
+php:
+  - hhvm
+  - 7.2
+
+
+install:
+  - composer install
+
+script:
+  - if [[ "$TRAVIS_PHP_VERSION" == '7.0' ]]; then vendor/bin/phpunit --coverage-clover=coverage.clover; fi
+  - if [[ "$TRAVIS_PHP_VERSION" == '7.0' ]]; then vendor/bin/phpunit ; fi
+
+after_script:
+  - if [[ "$TRAVIS_PHP_VERSION" == '7.0' ]]; then wget https://scrutinizer-ci.com/ocular.phar ; fi
+  - if [[ "$TRAVIS_PHP_VERSION" == '7.0' ]]; then php ocular.phar code-coverage:upload --format=php-clover coverage.clover ; fi
+
+deploy:
+  provider: heroku
+  api_key:
+    secure: 80c9ef0c-007b-4056-ad77-6b64d0f353af
+  app: firm-vote
+  run:
+    - restart
+    - "rake cleanup"
