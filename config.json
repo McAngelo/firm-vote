@@ -1,0 +1,20 @@
+{
+    "port": 5337,
+    "security": {
+        "tokenLife" : 3600
+    },
+    "mongoose": {
+        "uri": "mongodb://codafric:codafric_1@ds023570.mlab.com:23570/node_api"
+    },
+    "default": {
+        "user": {
+            "username": "myapi",
+            "password": "abc1234"
+        },
+        "client": {
+            "name": "Android API v1",
+            "clientId": "android",
+            "clientSecret": "SomeRandomCharsAndNumbers"
+        }
+    }
+}

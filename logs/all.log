@@ -1,0 +1,6 @@
+{"level":"info","message":"New article created with id: %s"}
+{"level":"info","message":"Article with id: %s updated"}
+{"level":"info","message":"Article with id: %s updated"}
+{"level":"info","message":"New article created with id: %s"}
+{"message":"Express server listening on port 5337","level":"info"}
+{"message":"Connected to DB!","level":"info"}

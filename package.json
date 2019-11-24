@@ -1,0 +1,51 @@
+{
+    "name": "NodeAPI",
+    "version": "1.0.0",
+    "author": "Evgeny Aleksandrov",
+    "description": "Simple example of RESTful API with Node.js and passport",
+    "private": true,
+    "scripts": {
+        "start": "node ./bin/www",
+        "test": "node ./test/server.test.js",
+        "generate": "node ./generateData.js"
+    },
+    "dependencies": {
+        "body-parser": "^1.18.x",
+        "express": "^4.16.x",
+        "faker": "^4.1.x",
+        "mongoose": "^5.7.6",
+        "nconf": "^0.10.x",
+        "oauth2orize": "^1.11.x",
+        "passport": "^0.4.x",
+        "passport-http": "^0.3.x",
+        "passport-http-bearer": "^1.0.x",
+        "passport-oauth2-client-password": "^0.1.x",
+        "winston": "^3.2.x"
+    },
+    "devDependencies": {
+        "superagent": "^5.1.0",
+        "tape": "^4.9.x"
+    },
+    "jshintConfig": {
+        "curly": true,
+        "eqeqeq": true,
+        "immed": true,
+        "latedef": false,
+        "newcap": false,
+        "noarg": true,
+        "sub": true,
+        "undef": true,
+        "boss": true,
+        "eqnull": true,
+        "strict": false,
+        "scripturl": true,
+        "evil": true,
+        "globals": {
+            "location": true,
+            "printStackTrace": false
+        },
+        "browser": true,
+        "node": true
+    },
+    "license": "MIT"
+}

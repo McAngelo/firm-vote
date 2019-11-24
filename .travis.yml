@@ -1,9 +1,17 @@
 sudo: false
 
-language: php
+language: node_js
 
-php:
-  - 5.6
+node_js:
+  - node
+
+services:
+  - mongodb
+  
+before_script:
+  #- npm run-script generate
+  #- npm start &
+  #- sleep 15
 
 deploy:
   provider: heroku
